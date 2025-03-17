@@ -1,0 +1,2 @@
+importlib_metadata>=6.0.0
+flake8
