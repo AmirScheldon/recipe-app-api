@@ -47,6 +47,6 @@ class ModelTests(TestCase):
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user(
                 username="test",
-                email= "",
+                email="",
                 password="test123"
             )
