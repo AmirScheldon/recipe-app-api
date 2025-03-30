@@ -10,19 +10,27 @@ from rest_framework.test import APIClient
 
 from core.models import Recipe
 
-from recipe.serializers import RecipeSerializer
-
+from recipe.serializers import (
+    RecipeSerializer,
+    RecipeDetailSerializer
+    )
 
 
 RECIPIES_URL = reverse("recipe:recipe-list")
 
+
+def url_recipe_detail(recipe_id):
+    """Create and return recipe detail url."""
+    return reverse("recipe:recipe-detail", args=[recipe_id])
+
+
 def create_recipe(user, **params):
     """Create and return a sample recipe."""
     defaults = {
-        "title":"Sample recipe name",
-        "time_minutes":5,
-        "price":Decimal("5.05"),
-        "description":"Smaple recipe description.",
+        "title": "Sample recipe name",
+        "time_minutes": 5,
+        "price": Decimal("5.05"),
+        "description": "Smaple recipe description.",
         "link": "http://example.com/recipe.pdf"
     }
     defaults.update(params)
@@ -42,6 +50,7 @@ class PublicRecipeAPITests(TestCase):
         res = self.client.get(RECIPIES_URL)
 
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+
 
 class PrivateRecipeAPITests(TestCase):
     """Test authenticated API requests."""
@@ -68,7 +77,7 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(res.data, serializer.data)
 
     def test_retrieve_recipe_list_limited_to_user(self):
-        """Test retrieving list of recipe is limited to the authenticated user."""
+        """Test list of recipe is limited to the authenticated user."""
         another_user = get_user_model().objects.create_user(
             username="anotheruser",
             email="another@example.com",
@@ -84,4 +93,11 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(res.data, serializer.data)
 
+    def test_get_recipe_detail(self):
+        """Test get recipe detail."""
+        recipe = create_recipe(user=self.user)
+        url = url_recipe_detail(recipe.id)
+        res = self.client.get(url)
+        serializer = RecipeDetailSerializer(recipe)
 
+        self.assertEqual(res.data, serializer.data)

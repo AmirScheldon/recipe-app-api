@@ -1,7 +1,7 @@
 """
 Serializers for the user API VIEW.
 """
-from django.contrib.auth import(
+from django.contrib.auth import (
     get_user_model,
     authenticate
 )
@@ -34,6 +34,7 @@ class UserSerializer(serializers.ModelSerializer):
 
         return user
 
+
 class AuthTokenSerializer(serializers.Serializer):
     """Serializer for Authenticate the user."""
     username = serializers.CharField()
@@ -60,4 +61,3 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs["user"] = user
         return attrs
-

@@ -11,4 +11,3 @@ urlpatterns = [
     path("me/", views.ManagerUserView.as_view(), name="me"),
 
 ]
-
