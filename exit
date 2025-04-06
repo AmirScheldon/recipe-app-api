@@ -1,0 +1,197 @@
+[33mcommit 86a53638cb8580172c3f1ae8474e36a51698e723[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Apr 6 15:29:32 2025 +0330
+
+    Added filter by tag and ingredient features.
+
+[33mcommit a2fb27821aaeab713cbc4e7938a22ff00506cf16[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sat Apr 5 21:48:06 2025 +0330
+
+    Added adding image feature and tests.
+
+[33mcommit 53aa8b442bb42c38718ef45f5d682d386d39678c[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Thu Apr 3 16:50:18 2025 +0330
+
+    Added update and delete ingredient tests and logics. Refactor recipe viewset.
+
+[33mcommit e36a8c4f16025349dce6fd206106b465213c0f00[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Wed Apr 2 21:04:15 2025 +0330
+
+    Added ingredient model and retriev ingredient test and logic.
+
+[33mcommit 5ed9716ba4e32dd6a08188c50e7dc4fcbabd6083[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Wed Apr 2 15:03:28 2025 +0330
+
+    Added update tags logic and some debugs.
+
+[33mcommit a180bbe7a11ccbf44affb883b56d2f621e18eb3b[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Wed Apr 2 15:02:49 2025 +0330
+
+    Added update tags logic and some debugs.
+
+[33mcommit aca59e5092b9511d2b1a09f1ea99cef22482a41f[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Apr 1 14:20:47 2025 +0330
+
+    Added update and delete tag tests and logics.
+
+[33mcommit e518500db59e1c2a45d659c0b2a68a23adf7267d[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Apr 1 00:02:05 2025 +0330
+
+    Added tag model, test and list mixin logic.
+
+[33mcommit 2d0e8a7f8e0adeeea3021061db66624a9d24a80e[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 30 17:40:00 2025 +0330
+
+    Added recipe create  tests and logic and some additional tests.
+
+[33mcommit 90c4337cfae5708f0281948e4f3efb0921cbad68[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 30 15:02:38 2025 +0330
+
+    Added recipe detail tests and logic.
+
+[33mcommit 6072af0660a1156342e7723ffb5ade08f840ffd7[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 30 12:35:08 2025 +0330
+
+    Added list recipes tests and logics.
+
+[33mcommit f884e1a0c16843dcf5e91832af115a41398fdb33[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Thu Mar 27 15:00:47 2025 +0330
+
+    Completely added user and me endpoints and logics.
+
+[33mcommit 0e4da07e9bf9b1569490cb0e705dbbb543164d5d[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Wed Mar 26 15:54:18 2025 +0330
+
+    Added Token base authentication.
+
+[33mcommit 8f78a1606fcd0f1b0a07a47376d0f6f2dc3c05fa[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Mar 25 16:43:15 2025 +0330
+
+    Added user app and creation logic and added Swagger.
+
+[33mcommit 2f8fe6e08e316701ac48d884988e1955c273af10[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Mon Mar 24 13:57:44 2025 +0330
+
+    Fixed flake8.
+
+[33mcommit 49bf2f02db137780173aa2ceb54cadf94bb9b6d7[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Mon Mar 24 13:56:34 2025 +0330
+
+    Added customized admin panel.
+
+[33mcommit 725f7a356f83808a17132d3a8669127f7174d54f[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Mon Mar 24 00:19:57 2025 +0330
+
+    Fixed flakel8
+
+[33mcommit 9e985cf1fa0cd6399913db7a2d5fbb1098988f4d[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Mon Mar 24 00:15:19 2025 +0330
+
+    Added superuser.
+
+[33mcommit 3f4b2083d13e573d9075b6ece5a8106b1ef40c6b[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 23 19:44:13 2025 +0330
+
+    Fixed flake8 errors.
+
+[33mcommit 3f5d4ef18503a64187807de13fbe5929fd5ca9c2[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 23 19:33:42 2025 +0330
+
+    Added custome user model. Added two testing scenarios.
+
+[33mcommit ba092d5292dc2fcf73cb76d447349697f2551002[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 23 11:59:36 2025 +0330
+
+    Changed versions.
+
+[33mcommit d3eaa1a7eb22785dcf750a161a4a1f5364b84833[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sun Mar 23 11:54:38 2025 +0330
+
+    Minor changes
+
+[33mcommit 2cef141d8d072f3f4330268eb9bdf41a992ef199[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sat Mar 22 14:41:45 2025 +0330
+
+    Changed github action for future updates.
+
+[33mcommit 931532ab8a2cb791047a64e558062621b2c31334[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Sat Mar 22 14:32:18 2025 +0330
+
+    Configured docker-compose and migrate db
+
+[33mcommit eb451c9a5abe24c5a5ba513b07672191e66b35c3[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Fri Mar 21 01:43:11 2025 +0330
+
+    Added wait_for_db command and its test.
+
+[33mcommit dd3ccabde1a6f8d1f6ac8f6bc52ffd9bf7ada982[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Wed Mar 19 15:08:51 2025 +0330
+
+    Added database adaptor and a sample test
+
+[33mcommit bd1f8e3a9c993499b2ed27dc42b2a79d31aa20d5[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Mar 18 16:10:49 2025 +0330
+
+    Fixed Docker in Github action
+
+[33mcommit 71436fd73bece0d577543523c75300c1670ff47b[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Mar 18 16:03:17 2025 +0330
+
+    Fixed Docker in Github action
+
+[33mcommit 23cd934e6cd11f15d1dc77239c39bdaaf28f14ea[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Mar 18 16:00:46 2025 +0330
+
+    Fixed Docker in Github action
+
+[33mcommit faa85d0820156ba26f7963f1df0ab5df40e55108[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Mar 18 15:55:07 2025 +0330
+
+    Fixed Docker for Github action
+
+[33mcommit 0d3c8c1d8ddd38c9699dce35da7ff58cf72837fb[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Tue Mar 18 15:45:41 2025 +0330
+
+    Added Github Action
+
+[33mcommit 3f21955c18788f19ef37051f5c6bc44d4dedd996[m
+Author: AmirScheldon <amirtaslimi12@gmail.com>
+Date:   Mon Mar 17 14:53:13 2025 +0330
+
+    add docker configuration and requirements
+
+[33mcommit 503a952c7e0fe79de39387d3535ea0f9a1d9a354[m
+Author: Amir Taslimi <114993982+AmirScheldon@users.noreply.github.com>
+Date:   Mon Mar 17 10:46:27 2025 +0330
+
+    Initial commit
