@@ -404,6 +404,58 @@ class PrivateRecipeAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_200_OK)
         self.assertEqual(recipe.ingredients.count(), 0)
 
+    def test_filter_by_tags(self):
+        """Test filtering recipes by tags."""
+        r1 = create_recipe(user=self.user,
+                           title="recipe1")
+        r2 = create_recipe(user=self.user,
+                           title="recipe2")
+        t1 = Tag.objects.create(user=self.user,
+                                name="tag1")
+        t2 = Tag.objects.create(user=self.user,
+                                name="tag2")
+        r1.tags.add(t1)
+        r2.tags.add(t2)
+        r3 = create_recipe(user=self.user,
+                           title="recipe3")
+
+        params = {"tags": f"{t1.id},{t2.id}"}
+        res = self.client.get(RECIPIES_URL, params)
+
+        s1 = RecipeSerializer(r1)
+        s2 = RecipeSerializer(r2)
+        s3 = RecipeSerializer(r3)
+
+        self.assertIn(s1.data, res.data)
+        self.assertIn(s2.data, res.data)
+        self.assertNotIn(s3.data, res.data)
+
+    def test_filter_by_ingredients(self):
+        """Test filtering recipes by ingredients."""
+        r1 = create_recipe(user=self.user,
+                           title="recipe1")
+        r2 = create_recipe(user=self.user,
+                           title="recipe2")
+        i1 = Ingredient.objects.create(user=self.user,
+                                       name="ingredient1")
+        i2 = Ingredient.objects.create(user=self.user,
+                                       name="ingredient2")
+        r1.ingredients.add(i1)
+        r2.ingredients.add(i2)
+        r3 = create_recipe(user=self.user,
+                           title="recipe3")
+
+        params = {"ingredients": f"{i1.id},{i2.id}"}
+        res = self.client.get(RECIPIES_URL, params)
+
+        s1 = RecipeSerializer(r1)
+        s2 = RecipeSerializer(r2)
+        s3 = RecipeSerializer(r3)
+
+        self.assertIn(s1.data, res.data)
+        self.assertIn(s2.data, res.data)
+        self.assertNotIn(s3.data, res.data)
+
 
 class ImageUploadTests(TestCase):
     """Tests for upload image API."""
@@ -424,8 +476,8 @@ class ImageUploadTests(TestCase):
     def test_upload_image(self):
         """Test uploading an image to a recipe."""
         url = image_upload_url(self.recipe.id)
-        with tempfile.NamedTemporaryFile(suffix="jpg") as imag_file:
-            img = Image.new("RGB", (10,10))
+        with tempfile.NamedTemporaryFile(suffix=".jpg") as image_file:
+            img = Image.new("RGB", (10, 10))
             img.save(image_file, format="JPEG")
             image_file.seek(0)
             payload = {"image": image_file}
