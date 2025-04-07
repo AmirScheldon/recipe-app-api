@@ -5,14 +5,15 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
+COPY ./scripts /scripts
 COPY  ./app /app
 WORKDIR /app
 EXPOSE 8000
 
 ARG DEV=false
-RUN apk add --update --no-cache postgresql-client jpeg-dev && \
+RUN apk add --update --no-cache postgresql15-client libjpeg && \
     apk add --update --no-cache --virtual .tmp-build-deps \
-        build-base postgresql-dev musl-dev zlib zlib-dev && \
+        build-base postgresql15-dev musl-dev zlib zlib-dev linux-headers && \
     python -m venv /py && \
     /py/bin/pip install --no-cache-dir --upgrade pip && \
     /py/bin/pip install --no-cache-dir -r /tmp/requirements.txt && \
@@ -28,8 +29,11 @@ RUN apk add --update --no-cache postgresql-client jpeg-dev && \
     mkdir -p /vol/web/media && \
     mkdir -p /vol/web/static && \
     chown -R django-user:django-user /vol && \
-    chmod -R 755 /vol
+    chmod -R 755 /vol && \
+    chmod -R +x /scripts
 
-ENV PATH="/py/bin:$PATH"
+ENV PATH="/scripts:/py/bin:$PATH"
 
 USER django-user
+
+CMD ["run.sh"]
